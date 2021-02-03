@@ -17,7 +17,7 @@ pipeline {
            steps {
                script {
                     sh "cd /var/lib/jenkins/apache-jmeter-5.3/bin"
-                    jmeter -n -t /home/necuser/"Thread Group.jmx" -l /home/necuser/Result.jtl
+                    jmeter -Jjmeter.save.saveservice.output_format=xml -n -t /home/necuser/"Thread Group.jmx" -l /home/necuser/Result.jtl
                }
            }
        }
