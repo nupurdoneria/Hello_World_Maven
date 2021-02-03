@@ -17,7 +17,7 @@ pipeline {
            steps {
                script {
                     sh "cd /var/lib/jenkins/apache-jmeter-5.3/bin"
-                    jmeter -n -t /home/necuser/"Thread Group.jmx" -l /home/necuser/Result.jtl
+                    sh "jmeter.sh -n -t /home/necuser/"Thread Group.jmx" -l /home/necuser/Result.jtl"
                }
            }
        }
