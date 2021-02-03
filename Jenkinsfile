@@ -7,7 +7,7 @@ pipeline {
             }
         }
         stage('Deploy') {
-            script {
+            steps {
                 sh "cp webapp/target/webapp.war /usr/share/tomcat/webapp"
               
             }
