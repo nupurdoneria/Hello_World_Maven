@@ -6,9 +6,12 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Deliver') {
+        stage('Deploy') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                sshagent(['ssh_server_username']) {
+                   sh "scp -o StrictHostKeyChecking=no webapp/target/webapp.war necuser@10.0.96.44:/usr/share/tomcat/webapp"
+            }
+                    
             }
         }
     }
