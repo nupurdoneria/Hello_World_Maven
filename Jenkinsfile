@@ -1,10 +1,9 @@
 pipeline {
     agent any
-    stages {
+   stages {
         stage('Build') {
             steps {
-                sh 'make' 
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+                sh 'mvn -B -DskipTests clean package'
             }
         }
     }
