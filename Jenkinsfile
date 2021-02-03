@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "sudo cp webapp/target/webapp.war /usr/share/tomcat/webapps"
+                sh "cp webapp/target/webapp.war /usr/share/tomcat/webapps"
               
             }
         }
