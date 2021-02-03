@@ -16,8 +16,8 @@ pipeline {
        stage('Performance Test') {
            steps {
                script {
-                    sh "cd /var/lib/jenkins/apache-jmeter-5.3/bin"
-                    sh "jmeter.sh -n -t /home/necuser/"Thread Group.jmx" -l /home/necuser/Result.jtl"
+                    //sh "cd /var/lib/jenkins/apache-jmeter-5.3/bin"
+                    sh "/var/lib/jenkins/apache-jmeter-5.3/bin/jmeter.sh -n -t /home/necuser/"Thread Group.jmx" -l /home/necuser/Result.jtl"
                }
            }
        }
