@@ -15,7 +15,8 @@ pipeline {
         }
        stage('Performance Test') {
            steps {
-               sh "apache-jmeter-5.3/bin/jmeter -J jmeter.save.saveservice.output_format=xml -n -t /home/necuser/"Thread Group.jmx" -l /home/necuser/Result.jtl"
+               sh "apache-jmeter-5.3/bin"
+               jmeter -J jmeter.save.saveservice.output_format=xml -n -t /home/necuser/"Thread Group.jmx" -l /home/necuser/Result.jtl"
            }
        }
     }
