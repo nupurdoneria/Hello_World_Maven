@@ -7,11 +7,9 @@ pipeline {
             }
         }
         stage('Deploy') {
-            steps {
-                sshagent(['abc123xyz']) {
-                   sh "cp -o StrictHostKeyChecking=no webapp/target/webapp.war /usr/share/tomcat/webapp"
-            }
-                    
+            script {
+                sh "cp webapp/target/webapp.war /usr/share/tomcat/webapp"
+              
             }
         }
     }
