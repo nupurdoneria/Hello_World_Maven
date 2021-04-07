@@ -28,7 +28,7 @@ pipeline {
        //}
         stage('Performance Test Build') {
             steps {
-                build job: "Pipeline_Performance", wait: true
+                build job: "Test_Performance", wait: true
             }
         }
     }
