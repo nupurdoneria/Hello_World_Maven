@@ -7,7 +7,7 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-        stage('Sonarqube sast') {
+        stage('Sonarqube analysis') {
            steps {
                build job: "Pipeline_Sonarqube", wait: true  
            }
@@ -26,11 +26,11 @@ pipeline {
                //}
            //}
        //}
-       //stage('Performance Test Build') {
-         //  steps {
-           //    build job: "Test_Performance", wait: true
-           //}
-       //}
+       stage('Performance Test Build') {
+          steps {
+              build job: "Pipeline_Performance", wait: true
+          }
+       }
     }
     
 }
