@@ -7,11 +7,11 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package'
             }
         }
-      // stage('Sonarqube sast') {
-        //   steps {
-          //     build job: "Test_Sonarqube", wait: true  
-           //}
-       //}
+        stage('Sonarqube sast') {
+           steps {
+               build job: "Pipeline_Sonarqube", wait: true  
+           }
+        }
         stage('Deploy') {
             steps {
                 sh "cp webapp/target/webapp.war /usr/share/tomcat/webapps"
