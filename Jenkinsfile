@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                      sh "cd /var/lib/jenkins/apache-jmeter-5.3/bin"
-                     sh "/var/lib/jenkins/apache-jmeter-5.3/bin/jmeter.sh -n -t /var/lib/jenkins/apache-jmeter-5.3/bin/ThreadGroup.jmx -l Result.jtl"
+                     sh "/var/lib/jenkins/apache-jmeter-5.3/bin/jmeter.sh -n -t /var/lib/jenkins/apache-jmeter-5.3/bin/testwithjenkins.jmx -l Result.jtl"
                 }
             }
        }
